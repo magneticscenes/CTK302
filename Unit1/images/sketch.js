@@ -1,13 +1,17 @@
-let day;
-let night;
+let fishes;
+let pinkfloyd;
+let pnk;
+
 function setup() {
   createCanvas(800, 800);
-day = loadImage("assets/day.jpg");
-night = loadImage("assets/night.jpg");
+Fish = loadImage("assets/fishes.jpg");
+Pink = loadImage("assets/pnk.jpg");
+Floyd = loadImage("assets/pinkfloyd.jpg");
 imageMode(CENTER);
 }
 
 function draw() {
-image(day, width/2, height/2, 300, 200);
-image(night, width/2, height/2 -200, 300, 200);
+  image(Fish, width/2, height/2 +200, 300, 200);
+image(Pink, width/2, height/2, 300, 200);
+image(Floyd, width/2, height/2 -200, 300, 200);
 }
