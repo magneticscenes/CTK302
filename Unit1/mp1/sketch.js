@@ -1,13 +1,13 @@
-let day;
-let night;
+let DAYsmall;
+let NIGHTsmall;
 
 function setup() {
   createCanvas(1000, 800);
   rectMode(CENTER);
   ellipseMode(CENTER);
 
-  day = loadImage("assets/day.jpg");
-  night = loadImage("assets/night.jpg");
+  DAYsmall = loadImage("assets/DAYsmall.jpg");
+  NIGHTsmall = loadImage("assets/NIGHTsmall.jpg");
   imageMode(CENTER);
 }
 
@@ -15,10 +15,16 @@ function setup() {
 
 function draw() {
 
-image(day);
-  background(50,100);
+
+  image(DAYsmall, width/2, height/2);
+  if (mouseIsPressed) {
+   image(NIGHTsmall, width/2, height/2);
+   }
+
   noStroke();
 
+  push();
+  translate(60, 80);
 
   //back shoulder
   fill(84, 130, 93);
@@ -36,11 +42,13 @@ image(day);
   quad(619, 418, 694, 542, 503, 823, 526, 577);
 
   //DESK
-  fill(92, 72, 50)
-  quad(705, 760, 449, 595, 0, 600, 0, 760);
+  push();
+  translate(0, 35);
+  fill(92, 72, 50);
+  quad(705, 760, 449, 595, -100, 600, -100, 760);
   fill(123, 96, 65)
-  quad(0, 760, 703, 760, 705, 800, 0, 800);
-
+  quad(-100, 760, 703, 760, 705, 800, -100, 800);
+pop();
   //back sleeve
   fill(96, 159, 108);
   quad(470, 492, 414, 591, 528, 603, 522, 501);
@@ -149,11 +157,14 @@ image(day);
   line(474, 348, 462, 367);
   line(466, 335, 435, 350);
 
+pop();
 
-//image(day, 0, 0);
-//  if (mouseIsPressed) {
-//  image(night, 0, 0);
-//  }
+fill(168, 94, 113, 50);
+rect(0, 800, 10000, 8000);
+if (mouseIsPressed) {
+  fill(63, 80, 186, 15);
+ rect(0, 800, 10000, 8000);
+ }
 
 }
 
