@@ -252,8 +252,8 @@ else {
 
 // this shows mouse location - comment it out when you're done!
 
-fill(0);
-text(mouseX + ", " + mouseY, 40, 40);
+//fill(0);
+//text(mouseX + ", " + mouseY, 40, 40);
 
 }
 
