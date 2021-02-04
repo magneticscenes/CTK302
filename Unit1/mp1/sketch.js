@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
 
+image(day, 0, 0);
   background(0,0);
   noStroke();
 
@@ -149,9 +150,9 @@ function draw() {
   line(466, 335, 435, 350);
 
 
-image(day, width/2, height/2);
+image(day, 0, 0);
   if (mouseIsPressed) {
-  image(night, width/2, height/2);
+  image(night, 0, 0);
   }
 
 }
