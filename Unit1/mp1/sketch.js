@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
 
-  background(100);
+  background(0,0);
   noStroke();
 
 
@@ -149,20 +149,12 @@ function draw() {
   line(466, 335, 435, 350);
 
 
-
-
-
-
-
+image(day, width/2, height/2);
   if (mouseIsPressed) {
-    // stuff that shows when the mouse is pressed
   image(night, width/2, height/2);
-  } else {
-    // when the mouse isn't pressed!
-  image(day, width/2, height/2);
   }
 
-
+}
 
   // this shows mouse location - comment it out when you're done!
 
