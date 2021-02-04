@@ -45,14 +45,14 @@ function draw() {
   quad(619, 418, 694, 542, 503, 823, 526, 577);
   if (mouseIsPressed) {
     //back shoulder
-  fill(139, 135, 202);
+  fill(111, 108, 157);
   quad(615, 396, 551, 455, 478, 597, 541, 665);
   fill(112, 184, 126);
   quad(470, 492, 414, 591, 528, 603, 522, 501);
   quad(414, 590, 528, 600, 533, 685, 413, 678);
 
   //shirt base
-  fill(76, 122, 83);
+  fill(139, 135, 202);
   quad(617, 351, 548, 479, 526, 577, 702, 402);
   ellipse(694, 482, 120, 160);
   quad(722, 413, 764, 467, 825, 695, 839, 780);
@@ -78,7 +78,7 @@ function draw() {
   quad(460, 473, 508, 466, 512, 510, 470, 516);
   if (mouseIsPressed) {
     //back sleeve
-    fill(96, 159, 108);
+    fill(134, 131, 185);
     quad(470, 492, 414, 591, 528, 603, 522, 501);
     quad(414, 590, 528, 600, 533, 685, 413, 678);
 
@@ -102,6 +102,11 @@ function draw() {
   quad(469, 482, 440, 443, 420, 443, 436, 469);
   quad(420, 443, 440, 443, 450, 439, 435, 434);
 
+if (mouseIsPressed) {
+  //backbun
+  fill(111, 166, 122);
+  quad(500, 300, 550, 300, 550, 460, 500, 460);
+}
   //head shape
   fill(255, 180, 141);
   ellipse(432, 398, 30, 25);
@@ -123,7 +128,11 @@ function draw() {
   //collar
   fill(112, 184, 186)
   quad(630, 366, 652, 385, 568, 472, 558, 445);
-
+  if (mouseIsPressed) {
+    //collar
+    fill(198, 202, 135)
+    quad(630, 366, 652, 385, 568, 472, 558, 445);
+  }
 
   //pencil
   fill(194, 208, 111)
@@ -155,6 +164,38 @@ function draw() {
   quad(611, 492, 748, 512, 696, 639, 533, 633);
   quad(388, 626, 397, 708, 630, 743, 696, 639);
 
+  if (mouseIsPressed) {
+    //cuff
+    fill(198, 202, 135);
+    quad(350, 625, 395, 630, 397, 695, 366, 690);
+    //sleeve
+    fill(163, 160, 211);
+    ellipse(680, 505, 140, 150);
+    quad(611, 492, 748, 512, 696, 639, 533, 633);
+    quad(388, 626, 397, 708, 630, 743, 696, 639);
+  }
+
+
+if (mouseIsPressed) {
+  //hair
+  fill(112, 184, 126);
+  arc(410, 282, 120, 90, 0, -PI - QUARTER_PI);
+  arc(410, 270, 120, 90, 0, -PI - QUARTER_PI);
+  arc(420, 240, 120, 90, 0, -PI - QUARTER_PI);
+  arc(565, 270, 120, 90, 0, -PI - QUARTER_PI);
+  arc(513, 307, 100, 100, 0, -PI + QUARTER_PI);
+  arc(508, 301, 220, 220, 0, HALF_PI);
+  arc(508, 301, 220, 220, PI, PI - HALF_PI - 20, );
+
+  //frontbun
+  push();
+  translate(-65, -80);
+  quad(620, 370, 670, 360, 678, 488, 630, 545,);
+  quad(575, 370, 625, 360, 630, 540, 585, 545,);
+  quad(655, 370, 680, 360, 700, 480, 625, 525,);
+pop();
+}
+else{
   //backbun
   fill(111, 166, 122);
   circle(525, 195, 90);
@@ -171,8 +212,18 @@ function draw() {
 
   //frontbun
   circle(618, 227, 100);
+}
 
-
+if (mouseIsPressed) {
+  //eye
+  strokeWeight(4);
+  stroke(5);
+  line(447, 365, 470, 350);
+//eyebrow
+  strokeWeight(1);
+  line(466, 335, 435, 350);
+}
+else {
   //eye
   fill(255);
   triangle(452, 358, 472, 351, 462, 368);
@@ -180,11 +231,11 @@ function draw() {
   stroke(5);
   line(447, 358, 476, 347);
   line(451, 358, 459, 366);
-
+//eyebrow
   strokeWeight(1);
   line(474, 348, 462, 367);
   line(466, 335, 435, 350);
-
+  }
   pop();
 
   fill(168, 94, 113, 50);
@@ -197,14 +248,14 @@ function draw() {
   fill(0, 150);
   text('Hilda likes to sit with her cat', 250, 765);
   text('and write on her desk, day and night.', 250, 780);
-}
+
 
 // this shows mouse location - comment it out when you're done!
 
-//fill(0);
-// text(mouseX + ", " + mouseY, 40, 40);
+fill(0);
+text(mouseX + ", " + mouseY, 40, 40);
 
-
+}
 
 
 
