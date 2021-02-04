@@ -1,6 +1,5 @@
 let day;
 let night;
-
 function setup() {
   createCanvas(800, 800);
 day = loadImage("assets/day.jpg");
