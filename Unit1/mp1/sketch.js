@@ -169,7 +169,6 @@ function draw() {
   //fill(0);
  // text(mouseX + ", " + mouseY, 40, 40);
 
-}
 
 
 
@@ -179,4 +178,3 @@ function draw() {
 // record the mouse location in console when clicked
 //function mouseReleased() {
  // print(mouseX + ", " + mouseY);
-}
