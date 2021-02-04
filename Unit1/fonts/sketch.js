@@ -1,7 +1,7 @@
 let f1, f2 ;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 800);
   textAlign(CENTER);
 
 f1 = loadFont("assets/bladesinger.ttf");
