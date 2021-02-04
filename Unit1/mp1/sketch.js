@@ -9,6 +9,7 @@ function setup() {
   DAYsmall = loadImage("assets/DAYsmall.jpg");
   NIGHTsmall = loadImage("assets/NIGHTsmall.jpg");
   imageMode(CENTER);
+  textAlign(CENTER);
 }
 
 
@@ -16,10 +17,10 @@ function setup() {
 function draw() {
 
 
-  image(DAYsmall, width/2, height/2);
+  image(DAYsmall, width / 2, height / 2);
   if (mouseIsPressed) {
-   image(NIGHTsmall, width/2, height/2);
-   }
+    image(NIGHTsmall, width / 2, height / 2);
+  }
 
   noStroke();
 
@@ -48,7 +49,7 @@ function draw() {
   quad(705, 760, 449, 595, -100, 600, -100, 760);
   fill(123, 96, 65)
   quad(-100, 760, 703, 760, 705, 800, -100, 800);
-pop();
+  pop();
   //back sleeve
   fill(96, 159, 108);
   quad(470, 492, 414, 591, 528, 603, 522, 501);
@@ -157,21 +158,24 @@ pop();
   line(474, 348, 462, 367);
   line(466, 335, 435, 350);
 
-pop();
+  pop();
 
-fill(168, 94, 113, 50);
-rect(0, 800, 10000, 8000);
-if (mouseIsPressed) {
-  fill(63, 80, 186, 15);
- rect(0, 800, 10000, 8000);
- }
+  fill(168, 94, 113, 50);
+  rect(0, 800, 10000, 8000);
+  if (mouseIsPressed) {
+    fill(63, 80, 186, 15);
+    rect(0, 800, 10000, 8000);
+  }
 
+  fill(0, 150);
+  text('Hilda likes to sit with her cat', 250, 765);
+  text('and write on her desk, day and night.', 250, 780);
 }
 
-  // this shows mouse location - comment it out when you're done!
+// this shows mouse location - comment it out when you're done!
 
-  //fill(0);
- // text(mouseX + ", " + mouseY, 40, 40);
+//fill(0);
+// text(mouseX + ", " + mouseY, 40, 40);
 
 
 
@@ -181,4 +185,4 @@ if (mouseIsPressed) {
 
 // record the mouse location in console when clicked
 //function mouseReleased() {
- // print(mouseX + ", " + mouseY);
+// print(mouseX + ", " + mouseY);
