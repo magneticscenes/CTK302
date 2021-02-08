@@ -6,10 +6,18 @@ song1 = loadSound("assets/downtown.mp3");
 
 function setup() {
   createCanvas(500, 500);
-song1.play();
+
 }
 
 
 function draw() {
   background (150);
+}
+
+function mouseReleased () {
+  if (song1.isPlaying()) {
+    song1.pause();
+  } else {
+  song1.loop();
+}
 }
