@@ -20,5 +20,8 @@ function mouseReleased () {
   } else {
   song1.loop();
 }
-// add these to programs that use sound, at the bottomfunction touchStarted() {getAudioContext().resume();}
+// add these to programs that use sound, at the bottomfunction
+touchStarted() {
+  getAudioContext().resume();
+}
 }
