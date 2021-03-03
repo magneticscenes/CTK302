@@ -35,7 +35,7 @@ function draw() {
     case 2:
       background('pink');
       text("youre watering", 100, 100);
-      image(WateringCan, width/2, height/2);
+      image(WateringCan, width/2, height/2, 300, 200);
 myTimer++ ;
 if (myTimer > 3*60){
  myTimer = 0 ;
