@@ -8,7 +8,7 @@ function setup() {
 
 
   // garden1 = loadImage("assets/garden1.jpeg");
-  WateringCan = loadImage("assets/WateringCan.jpg");
+  WateringCan = loadImage("assets/WateringCan.png");
   imageMode(CENTER);
 
 }
