@@ -72,7 +72,7 @@ function draw() {
       image(Baby, width / 2 - 14, height / 2 + 178);
 
       myTimer++;
-      if (myTimer > 3 * 60) {
+      if (myTimer > 2 * 60) {
         myTimer = 0;
         state = 4;
       }
@@ -94,7 +94,7 @@ function draw() {
       image(Pot, width / 2 - 14, height / 2 + 225);
 
       myTimer++;
-      if (myTimer > 3 * 60) {
+      if (myTimer > 2 * 60) {
         myTimer = 0;
         state = 6;
       }
