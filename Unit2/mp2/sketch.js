@@ -10,9 +10,14 @@ let Baby;
 let ClickTake;
 let Wait;
 let Click;
+let laugh;
 let y = 0;
 let state = 0;
 let myTimer = 0;
+
+function preload() {
+  laugh = loadSound("assets/plantlaugh.mp3");
+}
 
 function setup() {
 
@@ -31,6 +36,7 @@ function setup() {
   Wait = loadImage("assets/Wait.png");
   Click = loadImage("assets/Click.png");
   imageMode(CENTER);
+
 }
 
 function draw() {
@@ -39,7 +45,7 @@ function draw() {
 
     //THIS IS STARTING SCREEN
     case 0:
-      laugh.stop();
+
       image(Start, width / 2, height / 2);
       break;
 
@@ -96,7 +102,7 @@ function draw() {
 
       //THIS IS MONSTER PLANT
     case 6:
-
+      laugh.play();
       image(Room, width / 2, height / 2);
       image(Monster, width / 2 + 16, height / 2 + 4);
 
@@ -114,15 +120,21 @@ function draw() {
         image(Vines, width / 2, height / 2 + 500);
       }
       background(255, 0, 20, 50);
-      
       myTimer++;
       if (myTimer > 8 * 60) {
         myTimer = 0;
         state = 0;
       }
+
       break;
   }
 }
+
 function mouseReleased() {
   state++;
+
+}
+
+function touchStarted() {
+  getAudioContext().resume();
 }
