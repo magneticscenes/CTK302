@@ -48,9 +48,6 @@ else {velocity = 0};
   text("Click the screen first to give\npermission for mic input.\nMy volume is " + vol, 10, 60);
 
 
-
-
-
 }
 
 
