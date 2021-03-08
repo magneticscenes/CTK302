@@ -15,13 +15,13 @@ function draw() {
 //  background('grey');
   clear();
   numberOfTouches = touches.length;
-  text(numberOfTouches + ' touches', 5, 10);
+  text(numberOfTouches + ' touches', 50, 50);
 
   switch (numberOfTouches) {
     case 0:
-      fill("white");
+      fill("black");
       textSize(40);
-      text("no dogs", 5, 22);
+      text("no dogs", 100, 100);
       break;
 
     case 1:
