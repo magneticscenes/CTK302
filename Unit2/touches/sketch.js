@@ -28,11 +28,14 @@ function draw() {
     case 1:
       text("a dog!", 5, 22);
       image(dog, width / 2, height / 2, 300, 200);
+      image(dog, width / 2+100, height / 2, 300, 200);
       break;
 
     case 2:
       text("two dogs?!", 5, 22);
       image(dog, width / 2, height / 2, 300, 200);
+          image(dog, width / 2+100, height / 2, 300, 200);
+              image(dog, width / 2-100, height / 2, 300, 200);
       break;
 
     case 3:
