@@ -4,7 +4,7 @@ let dog2;
 let dog3;
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(600, 600);
     dog = loadImage("assets/dog.png");
   dog1 = loadImage("assets/dog1.jpg");
   dog2 = loadImage("assets/dog2.jpg");
@@ -26,20 +26,20 @@ function draw() {
       break;
 
     case 1:
-      text("a dog!", 5, 22);
+      text("a dog!", 100, 100);
       image(dog, width / 2, height / 2, 300, 200);
       image(dog, width / 2+100, height / 2, 300, 200);
       break;
 
     case 2:
-      text("two dogs?!", 5, 22);
+      text("two dogs?!", 100, 100);
       image(dog, width / 2, height / 2, 300, 200);
           image(dog, width / 2+100, height / 2, 300, 200);
               image(dog, width / 2-100, height / 2, 300, 200);
       break;
 
     case 3:
-      text("heaven.", 5, 22);
+      text("heaven.", 100, 100);
       image(dog, width / 2, height / 2, 300, 200);
       break;
   }
