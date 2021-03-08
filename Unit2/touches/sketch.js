@@ -27,20 +27,20 @@ function draw() {
 
     case 1:
       text("a dog!", 100, 100);
-      image(dog, width / 2, height / 2, 300, 200);
-      image(dog, width / 2+100, height / 2, 300, 200);
+        image(dog, width / 2, height / 2, 100, 100);
       break;
 
     case 2:
       text("two dogs?!", 100, 100);
-      image(dog, width / 2, height / 2, 300, 200);
-          image(dog, width / 2+100, height / 2, 300, 200);
-              image(dog, width / 2-100, height / 2, 300, 200);
+      image(dog, width / 2, height / 2, 100, 100);
+      image(dog, width / 2+100, height / 2, 100, 100);
       break;
 
     case 3:
       text("heaven.", 100, 100);
-      image(dog, width / 2, height / 2, 300, 200);
+      image(dog, width / 2, height / 2, 100, 100);
+          image(dog, width / 2+100, height / 2, 100, 100);
+              image(dog, width / 2-100, height / 2, 100, 100);
       break;
   }
 
