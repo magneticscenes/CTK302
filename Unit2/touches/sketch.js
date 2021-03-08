@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-  background('grey');
+//  background('grey');
   clear();
   numberOfTouches = touches.length;
   text(numberOfTouches + ' touches', 5, 10);
