@@ -32,7 +32,7 @@ class Car {
   // constructor and attributes
   constructor() {
     this.pos = createVector(width / 2 -15, height/2 +30);
-    this.vel = createVector(random(-.8, .8), random(10, 5));
+    this.vel = createVector(random(-2, 2), random(10, 5));
     this.r =random(100, 255);
     this.g =random(0, 50);
     this.b =random(100, 200);
