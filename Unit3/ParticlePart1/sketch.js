@@ -1,5 +1,5 @@
 let cars = [];
-
+let mouthy;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
@@ -8,10 +8,11 @@ function setup() {
   //   cars.push(new Car());
   // }
   noStroke();
+  mouthy = loadImage("assets/mouthy.png");
 }
 
 function draw() {
-  background(100);
+background(mouthy);
   cars.push(new Car());
 
   for (let i = 0; i < cars.length; i++) {
@@ -30,8 +31,8 @@ class Car {
 
   // constructor and attributes
   constructor() {
-    this.pos = createVector(width / 2, height - 80);
-    this.vel = createVector(random(-.8, .8), random(-10, -5));
+    this.pos = createVector(width / 2 -15, height/2 +30);
+    this.vel = createVector(random(-.8, .8), random(10, 5));
     this.r =random(100, 255);
     this.g =random(0, 50);
     this.b =random(100, 200);
