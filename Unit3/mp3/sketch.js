@@ -155,9 +155,10 @@ class Car {
   // methods
   display() {
 
-if (this.vel > 0){
+if (this.vel.x > 0){
    image(pommyright, this.pos.x, this.pos.y);
-} if (this.vel < 0){
+}
+if (this.vel.x < 0){
   image(pommyleft, this.pos.x, this.pos.y);
 }
     // this.timer = this.timer + 1;
