@@ -4,49 +4,33 @@ let maxTimer = 10 * 60;
 let timer = 0;
 let frogPos;
 let state = 0;
-let chef1left, chef1right;
-let pom = [];
-let lab = [];
-let gryhd = [];
-let bull = [];
+let poms = [];
+let j = 0;
+let paper;
+let pommyleft, pommyright;
+let right, left;
 
-let dogs1in, dogs2in, dogs3in, dogs4in;
 function setup() {
+
   imageMode(CENTER);
   createCanvas(500, 500);
-  chef1left = loadImage("assets/chef1TESTleft.png");
-  chef1right = loadImage("assets/chef1TESTright.png");
-  chef1 = loadImage("assets/chef1TESTright.png");
+
   paper = loadImage("assets/paperbackground.png");
-//   dogs1in = loadImage("assets/dog1.1.png");
-// dogs2in = loadImage("assets/dog2.1.png");
-// dogs3in = loadImage("assets/dog3.1.png");
-// dogs4in = loadImage("assets/dog4.1.png");
+  poms[0] = loadImage("assets/dog21left.png");
+  poms[1] = loadImage("assets/dog2out.png");
+  pommyleft = loadImage("assets/dog21left.png");
+pommyright = loadImage("assets/dog21right.png");
+  // Spawn an object
 
-lab[1] = loadImage("assets/dog1.1.png");
-lab[2] = loadImage("assets/dog1in.png");
+  for (let i = 0; i < maxCars; i++) {
+    cars.push(new Car());
+  }
 
-pom[1] = loadImage("assets/dog2.1.png");
-pom[2] = loadImage("assets/dog2out.png");
-
-// pom[1] = loadImage("assets/dog2.1.png");
-// pom[2] = loadImage("assets/dog2out.png");
-//
-// pom[1] = loadImage("assets/dog2.1.png");
-// pom[2] = loadImage("assets/dog2out.png");
-
-let dogs = [lab];
-dog = random(dogs);
-// Spawn an object
-
-for (let i = 0; i < maxCars; i++) {
-  cars.push(new Car());
-}
-
-frogPos = createVector(width / 2, height / 2 - 100);
+  frogPos = createVector(width / 2, height / 2 - 100);
 
 
 }
+
 function draw() {
 
   switch (state) {
@@ -58,7 +42,7 @@ function draw() {
       break;
 
     case 1:
-      image(paper, width / 2, height / 2, width, height);
+      background('yellow');
       game();
       timer++;
       if (timer > maxTimer) {
@@ -78,8 +62,6 @@ function draw() {
       fill('white');
       text('lOsT, click to play again', 100, 100);
       break;
-
-
   }
 }
 
@@ -109,8 +91,26 @@ function resetTheGame() {
   }
 }
 
+function chef() { //THIS IS WHERE YOU INSERT PLAYERCHEF
+  stroke(1);
+  fill('gray');
+  ellipse(frogPos.x, frogPos.y, 50, 40);
+  fill('lightblue');
+  ellipse(frogPos.x, frogPos.y, 30, 30);
+}
+
+function checkForKeys() {
+  if (keyIsDown(LEFT_ARROW)) frogPos.x -= 5;
+  if (keyIsDown(RIGHT_ARROW)) frogPos.x += 5;
+  if (keyIsDown(UP_ARROW)) frogPos.y -= 5;
+  if (keyIsDown(DOWN_ARROW)) frogPos.y += 5;
+
+}
+
 function game() {
+  image(paper, width / 2, height / 2);
   background(100);
+
 
 
   for (let i = 0; i < cars.length; i++) {
@@ -139,24 +139,6 @@ function game() {
 
 }
 
-
-
-function chef() { //THIS IS WHERE YOU INSERT PLAYERCHEF
-  stroke(1);
-  fill('gray');
-  ellipse(frogPos.x, frogPos.y, 50, 40);
-  fill('lightblue');
-  ellipse(frogPos.x, frogPos.y, 30, 30);
-}
-
-function checkForKeys() {
-  if (keyIsDown(LEFT_ARROW)) frogPos.x -= 5;
-  if (keyIsDown(RIGHT_ARROW)) frogPos.x += 5;
-  if (keyIsDown(UP_ARROW)) frogPos.y -= 5;
-  if (keyIsDown(DOWN_ARROW)) frogPos.y += 5;
-
-}
-
 // Car class
 class Car {
   // constructor and attributes
@@ -164,31 +146,26 @@ class Car {
 
     this.pos = createVector(-10, random(height));
     this.vel = createVector(random(-8, 8), random(-0, 0));
-
-    //this.col = color(random(255), random(255), random(255));
-    //this.width = random(20, 20);
+    this.timer = 0;
+    this.maxTimer = 10 * 60;
+    this.j = 0;
     rect(this.pos.x, this.pos.y, 50, 50, 100);
   }
 
   // methods
   display() {
 
-image(dog, this.pos.x, this.pos.y);
-
-
-
-
-  // if (image(dogs1in), this.vel.x < 0) image(chef1left, this.pos.x, this.pos.y);
-  //   else {
-  //   image(dogs1out, this.pos.x, this.pos.y)
-  //  }
-
-
-    // fill(this.col);
-    // rect(this.pos.x, this.pos.y, 30, 30, 100);
-    // textSize(this.width);
-    // text("WOOHOO", this.pos.x, this.pos.y);
-    //image();
+if (this.vel > 0){
+   image(pommyright, this.pos.x, this.pos.y);
+} if (this.vel < 0){
+  image(pommyleft, this.pos.x, this.pos.y);
+}
+    // this.timer = this.timer + 1;
+    // if (this.timer > this.maxTimer) {
+    //   this.j = this.j + 1;
+    //   if (this.j > birds.length - 1) this.j = 0;
+    //   this.timer = 0 ;
+    // }
   }
 
   move() {
