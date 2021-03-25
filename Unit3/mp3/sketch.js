@@ -15,24 +15,26 @@ let cat;
 let start;
 let win;
 let lose;
-function preload(){
+
+function preload() {
   song = loadSound('assets/happysong4dogs.mp3');
 }
+
 function setup() {
 
   imageMode(CENTER);
   createCanvas(700, 500);
 
-cat = loadImage("assets/bigcat.png");
+  cat = loadImage("assets/bigcat.png");
   paper = loadImage("assets/paperbackground.png");
   pommyleft[0] = loadImage("assets/dog21left.png");
   pommyleft[1] = loadImage("assets/dog21leftstep.png");
   pommyright[0] = loadImage("assets/dog21right.png");
-pommyright[1] = loadImage("assets/dog21rightstep.png");
-start = loadImage("assets/paperbackgroundstart.png");
-win = loadImage("assets/paperbackgroundwin.png");
-lose = loadImage("assets/paperbackgroundlose.png");
-//song = loadSound('assets/happysong4dogs.mp3') ;
+  pommyright[1] = loadImage("assets/dog21rightstep.png");
+  start = loadImage("assets/paperbackgroundstart.png");
+  win = loadImage("assets/paperbackgroundwin.png");
+  lose = loadImage("assets/paperbackgroundlose.png");
+  //song = loadSound('assets/happysong4dogs.mp3') ;
   // Spawn an object
 
   for (let i = 0; i < maxCars; i++) {
@@ -47,15 +49,15 @@ lose = loadImage("assets/paperbackgroundlose.png");
 function draw() {
 
   switch (state) {
-case -1:
-song.loop();
-state = 0
-break;
+    case -1:
+      song.loop();
+      state = 0
+      break;
 
     case 0:
-      image(start, width/2, height/2, width, height);
+      image(start, width / 2, height / 2, width, height);
       background(100, 80);
-    //  fill('white');
+      //  fill('white');
       //text('GAME TIME', 100, 100);
       break;
 
@@ -70,12 +72,12 @@ break;
       break;
 
     case 2: //win
-      image(win, width/2, height/2, width, height);
+      image(win, width / 2, height / 2, width, height);
       background(100, 80);
       break;
 
     case 3: //lose
-      image(lose, width/2, height/2, width, height);
+      image(lose, width / 2, height / 2, width, height);
       background(100, 80);
       break;
   }
@@ -109,7 +111,7 @@ function resetTheGame() {
 
 function bigcat() { //THIS IS WHERE YOU INSERT PLAYERbigcat
 
-  image(cat, frogPos.x, frogPos.y, 90, 90);
+  image(cat, frogPos.x, frogPos.y, 110, 110);
 
 }
 
@@ -122,7 +124,7 @@ function checkForKeys() {
 
 function game() {
   image(paper, width / 2, height / 2, width, height);
-background(100, 80);
+  background(100, 80);
 
 
   for (let i = 0; i < cars.length; i++) {
@@ -169,22 +171,22 @@ class Car {
   // methods
   display() {
 
-if (this.vel.x > 0){
-   image(pommyright[j], this.pos.x, this.pos.y);
-}
-if (this.vel.x < 0){
-  image(pommyleft[j], this.pos.x, this.pos.y);
-}
+    if (this.vel.x > 0) {
+      image(pommyright[j], this.pos.x, this.pos.y);
+    }
+    if (this.vel.x < 0) {
+      image(pommyleft[j], this.pos.x, this.pos.y);
+    }
 
-// timer++;
-//     if (timer > 50) {
-//       timer = 0;
-//       j++;
-//       if (j > 1){
-//       j = 0 ;
-//     }
-//   }
-}
+    // timer++;
+    //     if (timer > 50) {
+    //       timer = 0;
+    //       j++;
+    //       if (j > 1){
+    //       j = 0 ;
+    //     }
+    //   }
+  }
   move() {
     this.pos.add(this.vel);
     if (this.pos.x > width) this.pos.x = 0, this.pos.y = random(height);
