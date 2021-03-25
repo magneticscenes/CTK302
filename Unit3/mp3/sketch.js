@@ -3,23 +3,36 @@ let maxCars = 5;
 let maxTimer = 10 * 60;
 let timer = 0;
 let frogPos;
-let state = 0;
-let poms = [];
+let state = -1;
+let pomsteps = [];
 let j = 0;
 let paper;
-let pommyleft, pommyright;
+let pommyleft = [];
+let pommyright = [];
 let right, left;
-
+let song;
+let cat;
+let start;
+let win;
+let lose;
+function preload(){
+  song = loadSound('assets/happysong4dogs.mp3');
+}
 function setup() {
 
   imageMode(CENTER);
-  createCanvas(500, 500);
+  createCanvas(700, 500);
 
+cat = loadImage("assets/bigcat.png");
   paper = loadImage("assets/paperbackground.png");
-  poms[0] = loadImage("assets/dog21left.png");
-  poms[1] = loadImage("assets/dog2out.png");
-  pommyleft = loadImage("assets/dog21left.png");
-pommyright = loadImage("assets/dog21right.png");
+  pommyleft[0] = loadImage("assets/dog21left.png");
+  pommyleft[1] = loadImage("assets/dog21leftstep.png");
+  pommyright[0] = loadImage("assets/dog21right.png");
+pommyright[1] = loadImage("assets/dog21rightstep.png");
+start = loadImage("assets/paperbackgroundstart.png");
+win = loadImage("assets/paperbackgroundwin.png");
+lose = loadImage("assets/paperbackgroundlose.png");
+//song = loadSound('assets/happysong4dogs.mp3') ;
   // Spawn an object
 
   for (let i = 0; i < maxCars; i++) {
@@ -34,15 +47,20 @@ pommyright = loadImage("assets/dog21right.png");
 function draw() {
 
   switch (state) {
+case -1:
+song.loop();
+state = 0
+break;
 
     case 0:
-      background('purple');
-      fill('white');
-      text('GAME TIME', 100, 100);
+      image(start, width/2, height/2, width, height);
+      background(100, 80);
+    //  fill('white');
+      //text('GAME TIME', 100, 100);
       break;
 
     case 1:
-      background('yellow');
+      //background('yellow');
       game();
       timer++;
       if (timer > maxTimer) {
@@ -52,15 +70,13 @@ function draw() {
       break;
 
     case 2: //win
-      background('pink');
-      fill('white');
-      text('yOu wOn, click to play again', 100, 100);
+      image(win, width/2, height/2, width, height);
+      background(100, 80);
       break;
 
     case 3: //lose
-      background('black');
-      fill('white');
-      text('lOsT, click to play again', 100, 100);
+      image(lose, width/2, height/2, width, height);
+      background(100, 80);
       break;
   }
 }
@@ -91,12 +107,10 @@ function resetTheGame() {
   }
 }
 
-function chef() { //THIS IS WHERE YOU INSERT PLAYERCHEF
-  stroke(1);
-  fill('gray');
-  ellipse(frogPos.x, frogPos.y, 50, 40);
-  fill('lightblue');
-  ellipse(frogPos.x, frogPos.y, 30, 30);
+function bigcat() { //THIS IS WHERE YOU INSERT PLAYERbigcat
+
+  image(cat, frogPos.x, frogPos.y, 90, 90);
+
 }
 
 function checkForKeys() {
@@ -104,22 +118,22 @@ function checkForKeys() {
   if (keyIsDown(RIGHT_ARROW)) frogPos.x += 5;
   if (keyIsDown(UP_ARROW)) frogPos.y -= 5;
   if (keyIsDown(DOWN_ARROW)) frogPos.y += 5;
-
 }
 
 function game() {
-  image(paper, width / 2, height / 2);
-  background(100);
-
+  image(paper, width / 2, height / 2, width, height);
+background(100, 80);
 
 
   for (let i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].move();
 
-    if (cars[i].pos.dist(frogPos) < 25) {
+    if (cars[i].pos.dist(frogPos) < 45) {
       // cars.splice(i, 1);
       state = 3
+
+
     }
   }
 
@@ -130,12 +144,12 @@ function game() {
   }
   //-----------------TO MAKE PLAYER SWITCH DIRECTION
   // function keyPressed() {
-  //   if (keyCode === LEFT_ARROW) chef1 = yodaLeft;
-  //   if (keyCode === RIGHT_ARROW) chef1 = yodaRight;
+  //   if (keyCode === LEFT_ARROW) bigcat1 = yodaLeft;
+  //   if (keyCode === RIGHT_ARROW) bigcat1 = yodaRight;
   // }
   //frog
   checkForKeys();
-  chef(frogPos.x, frogPos.y, 50, 50);
+  bigcat(frogPos.x, frogPos.y, 50, 50);
 
 }
 
@@ -146,9 +160,9 @@ class Car {
 
     this.pos = createVector(-10, random(height));
     this.vel = createVector(random(-8, 8), random(-0, 0));
-    this.timer = 0;
-    this.maxTimer = 10 * 60;
-    this.j = 0;
+    //this.timer = 0;
+    //this.maxTimer = 10 * 60;
+    //this.j = 0;
     rect(this.pos.x, this.pos.y, 50, 50, 100);
   }
 
@@ -156,19 +170,21 @@ class Car {
   display() {
 
 if (this.vel.x > 0){
-   image(pommyright, this.pos.x, this.pos.y);
+   image(pommyright[j], this.pos.x, this.pos.y);
 }
 if (this.vel.x < 0){
-  image(pommyleft, this.pos.x, this.pos.y);
+  image(pommyleft[j], this.pos.x, this.pos.y);
 }
-    // this.timer = this.timer + 1;
-    // if (this.timer > this.maxTimer) {
-    //   this.j = this.j + 1;
-    //   if (this.j > birds.length - 1) this.j = 0;
-    //   this.timer = 0 ;
-    // }
-  }
 
+// timer++;
+//     if (timer > 50) {
+//       timer = 0;
+//       j++;
+//       if (j > 1){
+//       j = 0 ;
+//     }
+//   }
+}
   move() {
     this.pos.add(this.vel);
     if (this.pos.x > width) this.pos.x = 0, this.pos.y = random(height);
