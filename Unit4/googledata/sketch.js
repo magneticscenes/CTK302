@@ -57,18 +57,40 @@ class Bubble {
     this.animal = myAnimal;
     this.color = myColor;
     this.pos = createVector(random(width), random(height));
-    this.vel = random(1,3);
+    this.vel = random(1, 3);
   }
 
 
   display() {
 
-    //if (this.shape == "Cat") {
-     rect(this.pos.x, this.pos.y, 50, 50);
-    // }
+    if (this.animal == "Fish") {
+      //strokeWidth(10);
+      //fill(this.color);
+      ellipse(this.pos.x, this.pos.y, 50, 50);
+      fill('black');
+      text(this.name, this.pos.x, this.pos.y);
+    }
+
+    if (this.animal == "Dog") {
+      fill(this.color);
+      ellipse(this.pos.x, this.pos.y, 150, 150);
+      fill('black');
+      text(this.name, this.pos.x, this.pos.y);
+    }
+
+    // if (this.animal == "Cat") {
+    //   fill(this.color);
+    //   triangle(this.pos.x-20, this.pos.y, this.pos.x -10, this.pos.y -20, this.pos.x -40, this.pos.y -30,);
+    //   triangle(this.pos.x +5, this.pos.y+10, this.pos.x +5, this.pos.y -20, this.pos.x +40, this.pos.y -30,);
+    //  ellipse(this.pos.x, this.pos.y, 50, 50);
+    //    fill('black');
+    //    text(this.name, this.pos.x, this.pos.y);
+    //  }
+
+
     // if (this.shape == "Dog") {
-       // rect(this.pos.x, this.pos.y, 50, 50);
-       // text(this.name, this.pos.x, this.pos.y);
+    // rect(this.pos.x, this.pos.y, 50, 50);
+    // text(this.name, this.pos.x, this.pos.y);
     // }
     // if (this.shape == "Horse") {
     //   rect(this.pos.x, this.pos.y, 50, 50);
@@ -76,12 +98,12 @@ class Bubble {
     //   ellipse(this.pos.x, this.pos.y, 50, 50);
     // }
 
-    text(this.name, this.pos.x, this.pos.y);
+    //text(this.name, this.pos.x, this.pos.y);
   }
 
-drive(){
-  this.pos.x += this.vel ;
-  if (this.pos.x > width) this.pos.x = 0;
-}
+  drive() {
+    this.pos.x += this.vel;
+    if (this.pos.x > width) this.pos.x = 0;
+  }
 
 }
