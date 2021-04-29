@@ -66,7 +66,7 @@ class Bubble {
     this.animal = myAnimal;
     this.color = myColor;
     this.pos = createVector(random(width), random(height));
-    this.vel = random(1, 3);
+    this.vel = random(1, 4);
   }
 
 
@@ -94,5 +94,8 @@ class Bubble {
   drive() {
     this.pos.x += this.vel;
     if (this.pos.x > width) this.pos.x = 0;
+
+    this.pos.y += this.vel;
+    if (this.pos.y > height) this.pos.y = 0;
   }
 }
