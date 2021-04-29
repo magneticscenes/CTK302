@@ -25,6 +25,7 @@ function setup() {
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+  setVolume(30);
   song1.play();
 
 }
