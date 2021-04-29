@@ -26,6 +26,8 @@ function setup() {
   ellipseMode(CENTER);
   rectMode(CENTER);
   //setVolume(30);
+
+  //----This plays sometimes and other times not, also it's loud, beware.-----//
   song1.play();
 
 }
