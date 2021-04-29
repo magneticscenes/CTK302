@@ -1,4 +1,9 @@
 var bubbles = [];
+var song1;
+
+function preload() {
+song1 = loadSound("assets/maniac.mp3");
+}
 
 function setup() {
 
@@ -20,6 +25,7 @@ function setup() {
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+  song1.play();
 
 }
 
