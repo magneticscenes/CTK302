@@ -25,7 +25,7 @@ function setup() {
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
-  setVolume(30);
+  //setVolume(30);
   song1.play();
 
 }
@@ -70,17 +70,6 @@ class Bubble {
 
   display() {
 
-    // ellipse(this.pos.x, this.pos.y, 50, 50);
-    // fill('black');
-    // text(this.name, this.pos.x, this.pos.y);
- //    if (this.color == 'red') {
- //      //strokeWidth(10);
- //      //fill(this.color);
- //      fill('red');
- // }
- //else {
-    //   fill('blue');
-    // }
       if (this.animal == "Cat"){
 
         fill(this.color);
@@ -97,29 +86,8 @@ class Bubble {
       fill('black');
       text(this.name, this.pos.x, this.pos.y);
     }
-    //   fill('black');
-    //   text(this.name, this.pos.x, this.pos.y);
-    // }
-      // triangle(this.pos.x - 20, this.pos.y, this.pos.x - 10, this.pos.y - 20, this.pos.x - 40, this.pos.y - 30, );
-      // triangle(this.pos.x + 5, this.pos.y + 10, this.pos.x + 5, this.pos.y - 20, this.pos.x + 40, this.pos.y - 30, );
-      // ellipse(this.pos.x, this.pos.y, 50, 50);
-      // fill('black');
-      // text(this.name, this.pos.x, this.pos.y);
+
    }
-
-
-    // if (this.shape == "Dog") {
-    // rect(this.pos.x, this.pos.y, 50, 50);
-    // text(this.name, this.pos.x, this.pos.y);
-    // }
-    // if (this.shape == "Horse") {
-    //   rect(this.pos.x, this.pos.y, 50, 50);
-    // } else {
-    //   ellipse(this.pos.x, this.pos.y, 50, 50);
-    // }
-
-    //text(this.name, this.pos.x, this.pos.y);
-
 
   drive() {
     this.pos.x += this.vel;
