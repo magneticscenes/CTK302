@@ -62,12 +62,13 @@ class Bubble {
 
 
   display() {
-    if (this.shape == "Cat") {
-      rect(this.pos.x, this.pos.y, 50, 50);
+
+    //if (this.shape == "Cat") {
+     rect(this.pos.x, this.pos.y, 50, 50);
     // }
     // if (this.shape == "Dog") {
-       rect(this.pos.x, this.pos.y, 50, 50);
-       text(this.name, this.pos.x, this.pos.y);
+       // rect(this.pos.x, this.pos.y, 50, 50);
+       // text(this.name, this.pos.x, this.pos.y);
     // }
     // if (this.shape == "Horse") {
     //   rect(this.pos.x, this.pos.y, 50, 50);
@@ -83,5 +84,4 @@ drive(){
   if (this.pos.x > width) this.pos.x = 0;
 }
 
-}
 }
