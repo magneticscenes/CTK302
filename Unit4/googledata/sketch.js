@@ -38,7 +38,7 @@ function gotData(data) {
 
 
 function draw() {
-  background('blue');
+  background('gray');
 
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
@@ -63,29 +63,42 @@ class Bubble {
 
   display() {
 
-    if (this.animal == "Fish") {
-      //strokeWidth(10);
-      //fill(this.color);
+    // ellipse(this.pos.x, this.pos.y, 50, 50);
+    // fill('black');
+    // text(this.name, this.pos.x, this.pos.y);
+ //    if (this.color == 'red') {
+ //      //strokeWidth(10);
+ //      //fill(this.color);
+ //      fill('red');
+ // }
+ //else {
+    //   fill('blue');
+    // }
+      if (this.animal == "Cat"){
+
+        fill(this.color);
+      triangle(this.pos.x - 20, this.pos.y + 10, this.pos.x - 10, this.pos.y - 20, this.pos.x - 40, this.pos.y - 30, );
+      triangle(this.pos.x + 20, this.pos.y + 10, this.pos.x + 5, this.pos.y - 20, this.pos.x + 40, this.pos.y - 30, );
+      ellipse(this.pos.x, this.pos.y, 50, 50);
+      fill('black');
+      text(this.name, this.pos.x, this.pos.y);
+    } else {
+
+      fill(this.color);
+      triangle(this.pos.x, this.pos.y, this.pos.x - 40, this.pos.y - 30, this.pos.x - 40, this.pos.y + 30, );
       ellipse(this.pos.x, this.pos.y, 50, 50);
       fill('black');
       text(this.name, this.pos.x, this.pos.y);
     }
-
-    if (this.animal == "Dog") {
-      fill(this.color);
-      ellipse(this.pos.x, this.pos.y, 150, 150);
-      fill('black');
-      text(this.name, this.pos.x, this.pos.y);
-    }
-
-    // if (this.animal == "Cat") {
-    //   fill(this.color);
-    //   triangle(this.pos.x-20, this.pos.y, this.pos.x -10, this.pos.y -20, this.pos.x -40, this.pos.y -30,);
-    //   triangle(this.pos.x +5, this.pos.y+10, this.pos.x +5, this.pos.y -20, this.pos.x +40, this.pos.y -30,);
-    //  ellipse(this.pos.x, this.pos.y, 50, 50);
-    //    fill('black');
-    //    text(this.name, this.pos.x, this.pos.y);
-    //  }
+    //   fill('black');
+    //   text(this.name, this.pos.x, this.pos.y);
+    // }
+      // triangle(this.pos.x - 20, this.pos.y, this.pos.x - 10, this.pos.y - 20, this.pos.x - 40, this.pos.y - 30, );
+      // triangle(this.pos.x + 5, this.pos.y + 10, this.pos.x + 5, this.pos.y - 20, this.pos.x + 40, this.pos.y - 30, );
+      // ellipse(this.pos.x, this.pos.y, 50, 50);
+      // fill('black');
+      // text(this.name, this.pos.x, this.pos.y);
+   }
 
 
     // if (this.shape == "Dog") {
@@ -99,11 +112,10 @@ class Bubble {
     // }
 
     //text(this.name, this.pos.x, this.pos.y);
-  }
+
 
   drive() {
     this.pos.x += this.vel;
     if (this.pos.x > width) this.pos.x = 0;
   }
-
 }
