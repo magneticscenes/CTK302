@@ -15,6 +15,9 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
+
+  wormleft = loadImage("assets/worm1left.png");
+  wormright = loadImage("assets/worm1right.png");
   // initialize accelerometer variables
   alpha = 0;
   beta = 0;
