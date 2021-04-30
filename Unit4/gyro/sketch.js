@@ -62,7 +62,7 @@ function draw() {
   noStroke();
   textSize(300);
   textAlign(CENTER);
-  text("ctk", width / 2, height / 2);
+  text("Fly Mr. Birdy!", width / 2, height / 2 -300);
 
 }
 
