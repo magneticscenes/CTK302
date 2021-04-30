@@ -37,8 +37,19 @@ function setup() {
 }
 
 function draw() {
-
-  background('#c6f5ff'); // light blue
+  switch (state) {
+    // case -1:
+    //   song.loop();
+    //   state = 0
+    //   break;
+    //
+    case 0:
+      // image(start, width / 2, height / 2, width, height);
+      background(100, 80);
+      //  fill('white');
+      //text('GAME TIME', 100, 100);
+      break;
+  // background('#c6f5ff'); // light blue
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
