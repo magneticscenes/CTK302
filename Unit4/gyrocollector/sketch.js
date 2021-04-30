@@ -159,12 +159,14 @@ function Car() {
   this.display = function() {
 
     if (this.vel.x > 0) {
-      fill(this.r, this.g, this.b, this.a);
-      ellipse(this.pos.x - 50, this.pos.y, 50, 50);
-      ellipse(this.pos.x + 50, this.pos.y, 50, 50);
-      rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+      image(wormleft, this.pos.x, this.pos.y);
+      // fill(this.r, this.g, this.b, this.a);
+      // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
+      // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
+      // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     } else {
-        rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+        image(wormright, this.pos.x, this.pos.y);
+        // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     }
     // maybe use an image here instead!
     // fill(this.r, this.g, this.b, this.a);
