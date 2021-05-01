@@ -159,13 +159,14 @@ image(garden, windowWidth/2, windowHeight/2);
   fill('white');
   textSize(40);
   textAlign(CENTER);
-  text("your words or image here!", width / 2, 600, windowWidth - 200, windowHeight - 200);
+  text("Shake your device to make more worms appear!", width / 2, 1100, windowWidth - 200, windowHeight - 200);
 
 
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
-  textAlign(LEFT);
-  textSize(20);
+  textAlign(CENTER);
+  fill('white');
+  textSize(10);
   fill('black');
   text("orientation data:", 25, 25);
   textSize(15);
