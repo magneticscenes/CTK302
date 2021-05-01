@@ -13,7 +13,7 @@ let wormright;
 let timer = 0;
 let i = 0;
 let j = 0;
-
+let garden;
 
 // var bunnyImage;
 var cars = [];
@@ -23,6 +23,8 @@ var frogPos;
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
+
+garden = loadImage("assets/garden.png");
 
 wormsleft[0] = loadImage("assets/worm1left.png");
 wormsleft[1] = loadImage("assets/worm2left.png");
@@ -75,7 +77,8 @@ function draw() {
 
 
 
-  background('#c6f5ff'); // light blue
+image(garden, width/2, height/2);
+  //background('#c6f5ff'); // light blue
 
 
 
@@ -153,7 +156,7 @@ function draw() {
 function deviceShaken() {
   // re-spawn cars
   cars = []; // clear the array first
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 10; i++) {
     cars.push(new Car());
   }
 }
