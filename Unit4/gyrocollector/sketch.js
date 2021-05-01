@@ -121,16 +121,12 @@ image(garden, width/2, height/2);
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   // draw the FROG
-  if (this.vel.x > 0) {
+
   image(duckright[k], this.pos.x, this.pos.y, 100,100);
     // fill(this.r, this.g, this.b, this.a);
     // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
     // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
     // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
-  } else {
-      image(duckleft[k], this.pos.x, this.pos.y, 100, 100);
-      // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
-  }
   timer++;
   if (timer > 300){
     timer = 0;
