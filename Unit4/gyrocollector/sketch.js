@@ -121,8 +121,9 @@ image(garden, width/2, height/2);
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   // draw the FROG
+  // image(bunnyImage, 0, 0, 500, 500);
 
-  image(duckright[k], this.pos.x, this.pos.y, 100,100);
+  image(duckright[k], 0, 0, 100,100);
     // fill(this.r, this.g, this.b, this.a);
     // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
     // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
