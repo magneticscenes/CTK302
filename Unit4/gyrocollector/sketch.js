@@ -67,16 +67,6 @@ function draw() {
       case 0:
         state = 1;
         break;
-
-      // case 2:
-      //   resetTheGame();
-      //   state = 0;
-      //   break;
-      //
-      // case 3:
-      //   resetTheGame();
-      //   state = 0;
-      //   break;
     }
   }
 
