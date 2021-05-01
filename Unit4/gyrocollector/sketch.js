@@ -6,8 +6,13 @@ var z = 0;
 var xPosition = 0;
 var yPosition = 0;
 let state = 0;
+let wormsleft = [];
+let wormsright = [];
 let wormleft;
 let wormright;
+let timer = 0;
+let i = 0;
+
 
 // var bunnyImage;
 var cars = [];
@@ -18,9 +23,13 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
+wormsleft[0] = loadImage("assets/worm1left.png");
+wormsleft[1] = loadImage("assets/worm2left.png");
 
-  wormleft = loadImage("assets/worm1left.png");
-  wormright = loadImage("assets/worm1right.png");
+wormsright[0] = loadImage("assets/worm1right.png");
+wormsright[1] = loadImage("assets/worm2right.png");
+  // wormleft = loadImage("assets/worm1left.png");
+  // wormright = loadImage("assets/worm1right.png");
   // initialize accelerometer variables
   alpha = 0;
   beta = 0;
@@ -28,7 +37,7 @@ function setup() {
 
 
   // spawn a bunch of cars
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 5; i++) {
     cars.push(new Car());
   }
 
@@ -55,6 +64,7 @@ function draw() {
   //     //  fill('white');
   //     //text('GAME TIME', 100, 100);
   //     break;
+
   //
   //   case 1:
   //   game();
@@ -64,7 +74,7 @@ function draw() {
 
 
 
-  // background('#c6f5ff'); // light blue
+  background('#c6f5ff'); // light blue
 
 
 
@@ -142,7 +152,7 @@ function draw() {
 function deviceShaken() {
   // re-spawn cars
   cars = []; // clear the array first
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < 5; i++) {
     cars.push(new Car());
   }
 }
@@ -185,15 +195,23 @@ function Car() {
   this.display = function() {
 
     if (this.vel.x > 0) {
-      image(wormleft, this.pos.x, this.pos.y);
+    image(wormsright[i], this.pos.x, this.pos.y);
       // fill(this.r, this.g, this.b, this.a);
       // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
       // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
       // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     } else {
-        image(wormright, this.pos.x, this.pos.y);
+        image(wormsleft[i], this.pos.x, this.pos.y);
         // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     }
+    timer++;
+    if (timer > 90){
+      timer = 0;
+    i++ ;
+    if (i > 1){
+    i = 0;
+    }
+  }
     // maybe use an image here instead!
     // fill(this.r, this.g, this.b, this.a);
     // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
