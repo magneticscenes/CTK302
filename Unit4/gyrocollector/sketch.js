@@ -13,6 +13,7 @@ let duckright = [];
 let timer = 0;
 let i = 0;
 let j = 0;
+let k = 0;
 let garden;
 
 // var bunnyImage;
@@ -41,9 +42,9 @@ duckleft[4] = loadImage("assets/duck4left.png");
 
 duckright[0] = loadImage("assets/duck1right.png");
 duckright[1] = loadImage("assets/duck2right.png");
-duckright[2] = loadImage("assets/duck2right.png");
-duckright[3] = loadImage("assets/duck2right.png");
-duckright[4] = loadImage("assets/duck2right.png");
+duckright[2] = loadImage("assets/duck2.5right.png");
+duckright[3] = loadImage("assets/duck3right.png");
+duckright[4] = loadImage("assets/duck4right.png");
 
   // wormleft = loadImage("assets/worm1left.png");
   // wormright = loadImage("assets/worm1right.png");
@@ -120,9 +121,26 @@ image(garden, width/2, height/2);
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   // draw the FROG
-  // image(bunnyImage, 0, 0, 500, 500);
-  fill('green');
-  ellipse(0, 0, 80, 80);
+  if (this.vel.x > 0) {
+  image(duckright[k], this.pos.x, this.pos.y, 100,100);
+    // fill(this.r, this.g, this.b, this.a);
+    // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
+    // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
+    // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+  } else {
+      image(duckleft[k], this.pos.x, this.pos.y, 100, 100);
+      // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+  }
+  timer++;
+  if (timer > 300){
+    timer = 0;
+  k++ ;
+  if (k > 4){
+  k = 0;
+  }
+}
+  // fill('green');
+  // ellipse(0, 0, 80, 80);
   pop();
 
 
