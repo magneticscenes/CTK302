@@ -6,6 +6,8 @@ var z = 0;
 var xPosition = 0;
 var yPosition = 0;
 let state = 0;
+let wormleft;
+let wormright;
 
 // var bunnyImage;
 var cars = [];
@@ -49,13 +51,15 @@ function draw() {
     //
     case 0:
       // image(start, width / 2, height / 2, width, height);
-      background(100, 80);
+      background('green');
       //  fill('white');
       //text('GAME TIME', 100, 100);
       break;
 
     case 1:
     game();
+    break;
+  }
   // background('#c6f5ff'); // light blue
 
   function mouseReleased() {
