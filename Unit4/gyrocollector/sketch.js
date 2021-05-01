@@ -119,7 +119,7 @@ function Car() {
   // this.g = random(255);
   // this.b = random(255);
   // this.a = random(255);  // alpha opacity value for fill!
-
+s
 
   // methods
   this.display = function() {
@@ -193,6 +193,11 @@ function Car() {
     // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
     // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
     // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+
+  // fill('green');
+  // ellipse(0, 0, 80, 80);
+  pop();
+  
   timer++;
   if (timer > 300){
     timer = 0;
@@ -201,10 +206,6 @@ function Car() {
   k = 0;
   }
 }
-  // fill('green');
-  // ellipse(0, 0, 80, 80);
-  pop();
-
 
   // update the frog's position using the accelerometer data
   frogPos.x = xPosition;
@@ -229,25 +230,25 @@ function Car() {
 
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
-push();
-translate(-15, windowHeight - 210);
-
-  textAlign(LEFT);
-  fill('white');
-  textSize(10);
-  //fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y, 25, 170);
-  text("z = " + z, 25, 190);
-pop();
+// push();
+// translate(-15, windowHeight - 210);
+//
+//   textAlign(LEFT);
+//   fill('white');
+//   textSize(10);
+//   //fill('black');
+//   text("orientation data:", 25, 25);
+//   textSize(15);
+//   text("alpha: " + alpha, 25, 50);
+//   text("beta: " + beta, 25, 70);
+//   text("gamma: " + gamma, 25, 90);
+//   textSize(20);
+//   text("acceleration data:", 25, 125);
+//   textSize(15);
+//   text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
+//   text("y = " + y, 25, 170);
+//   text("z = " + z, 25, 190);
+// pop();
 }
 
 
