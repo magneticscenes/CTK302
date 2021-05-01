@@ -121,7 +121,7 @@ image(garden, width/2, height/2);
   for (var i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].drive();
-    if (cars[i].pos.dist(frogPos) < 50) {
+    if (cars[i].pos.dist(frogPos) < 10) {
       cars.splice(i, 1);
     }
   }
@@ -199,13 +199,13 @@ function Car() {
   this.display = function() {
 
     if (this.vel.x > 0) {
-    image(wormsright[j], this.pos.x, this.pos.y, 50, 50);
+    image(wormsright[j], this.pos.x, this.pos.y, 80, 50);
       // fill(this.r, this.g, this.b, this.a);
       // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
       // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
       // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     } else {
-        image(wormsleft[j], this.pos.x, this.pos.y, 50, 50);
+        image(wormsleft[j], this.pos.x, this.pos.y, 80, 50);
         // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     }
     timer++;
