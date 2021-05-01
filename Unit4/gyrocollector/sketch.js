@@ -167,18 +167,18 @@ image(garden, windowWidth/2, windowHeight/2);
   textAlign(CENTER);
   fill('white');
   textSize(10);
-  fill('black');
-  text("orientation data:", 50, windowheight -175);
+  //fill('black');
+  text("orientation data:", 25, 25);
   textSize(15);
-  text("alpha: " + alpha, 50, windowheight -195);
-  text("beta: " + beta, 50, windowheight -215);
-  text("gamma: " + gamma, 50, windowheight -235);
+  text("alpha: " + alpha, 25, 50);
+  text("beta: " + beta, 25, 70);
+  text("gamma: " + gamma, 25, 90);
   textSize(20);
-  text("acceleration data:", 50, windowheight -250);
+  text("acceleration data:", 25, 125);
   textSize(15);
-  text("x = " + x, 50, windowheight -265); // .toFixed means just show (x) decimal places
-  text("y = " + y, 50, windowheight -280);
-  text("z = " + z, 50, windowheight -295);
+  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
+  text("y = " + y, 25, 170);
+  text("z = " + z, 25, 190);
 
 }
 
