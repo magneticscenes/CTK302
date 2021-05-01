@@ -110,7 +110,7 @@ function draw() {
   text("y = " + y, 25, 170);
   text("z = " + z, 25, 190);
 
-
+}
 }
 
 function deviceShaken() {
