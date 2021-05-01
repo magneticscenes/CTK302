@@ -43,32 +43,41 @@ function setup() {
 }
 
 function draw() {
-  switch (state) {
-    // case -1:
-    //   song.loop();
-    //   state = 0
-    //   break;
-    //
-    case 0:
-      // image(start, width / 2, height / 2, width, height);
-      background('green');
-      //  fill('white');
-      //text('GAME TIME', 100, 100);
-      break;
+  // switch (state) {
+  //   // case -1:
+  //   //   song.loop();
+  //   //   state = 0
+  //   //   break;
+  //   //
+  //   case 0:
+  //     // image(start, width / 2, height / 2, width, height);
+  //     background('green');
+  //     //  fill('white');
+  //     //text('GAME TIME', 100, 100);
+  //     break;
+  //
+  //   case 1:
+  //   game();
+  //   break;
+  // }
 
-    case 1:
-    game();
-    break;
-  }
+
+
+
   // background('#c6f5ff'); // light blue
 
-  function mouseReleased() {
-    switch (state) {
-      case 0:
-        state = 1;
-        break;
-    }
-  }
+
+
+
+  // function mouseReleased() {
+  //   switch (state) {
+  //     case 0:
+  //       state = 1;
+  //       break;
+  //   }
+  // }
+
+
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -93,7 +102,7 @@ function draw() {
   frogPos.x = xPosition;
   frogPos.y = yPosition;
 
-function game(){
+//function game(){
   // iterate through the car loop to move them and see if we need to delete cars
   for (var i = 0; i < cars.length; i++) {
     cars[i].display();
@@ -102,7 +111,7 @@ function game(){
       cars.splice(i, 1);
     }
   }
-}
+//}
   // MORE DECORATIONS - write that pretty ATK type on top.
   fill('white');
   textSize(40);
