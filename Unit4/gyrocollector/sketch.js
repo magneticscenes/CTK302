@@ -17,6 +17,7 @@ let i = 0;
 let j = 0;
 let k = 0;
 let m = 0;
+let n = 0;
 let garden;
 
 // var bunnyImage;
@@ -84,12 +85,20 @@ function draw() {
 
   image(garden, windowWidth / 2, windowHeight / 2);
 
-  image(ant, m, windowHeight / 2, 50, 50);
+  image(antright[j], m, n, 50, 50);
   m = m + 5;
   if (m > width) {
-    m = -50;
+    m = -50
+    n = random(windowHeight);
   }
-
+  timer++;
+  if (timer > 300) {
+    timer = 0;
+    j++;
+    if (j > 1) {
+      j = 0;
+    }
+  }
   function Car() {
     // attributes
     this.pos = createVector(random(height), random(width));
@@ -171,7 +180,7 @@ function draw() {
   //}
   // MORE DECORATIONS - write that pretty ATK type on top.
   fill('white');
-  textSize(30);
+  textSize(20);
   textAlign(CENTER);
   text("Shake your device to make more worms appear!", width / 2, 1100, windowWidth - 200, windowHeight + 100);
 
@@ -203,7 +212,7 @@ function draw() {
 function deviceShaken() {
   // re-spawn cars
   cars = []; // clear the array first
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 16; i++) {
     cars.push(new Car());
   }
 }
