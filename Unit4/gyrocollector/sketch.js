@@ -8,8 +8,8 @@ var yPosition = 0;
 let state = 0;
 let wormsleft = [];
 let wormsright = [];
-let wormleft;
-let wormright;
+let duckleft = [];
+let duckright = [];
 let timer = 0;
 let i = 0;
 let j = 0;
@@ -31,6 +31,20 @@ wormsleft[1] = loadImage("assets/worm2left.png");
 
 wormsright[0] = loadImage("assets/worm1right.png");
 wormsright[1] = loadImage("assets/worm2right.png");
+
+duckleft[0] = loadImage("assets/duck1left.png");
+duckleft[1] = loadImage("assets/duck2left.png");
+duckleft[2] = loadImage("assets/duck2.5left.png");
+duckleft[3] = loadImage("assets/duck3left.png");
+duckleft[4] = loadImage("assets/duck4left.png");
+
+
+duckright[0] = loadImage("assets/duck1right.png");
+duckright[1] = loadImage("assets/duck2right.png");
+duckright[2] = loadImage("assets/duck2right.png");
+duckright[3] = loadImage("assets/duck2right.png");
+duckright[4] = loadImage("assets/duck2right.png");
+
   // wormleft = loadImage("assets/worm1left.png");
   // wormright = loadImage("assets/worm1right.png");
   // initialize accelerometer variables
