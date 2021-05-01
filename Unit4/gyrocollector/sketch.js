@@ -99,8 +99,6 @@ function draw() {
   // }
 
 
-
-
 image(garden, windowWidth/2, windowHeight/2);
   //background('#c6f5ff'); // light blue
 
@@ -112,12 +110,10 @@ image(garden, windowWidth/2, windowHeight/2);
   pop();
 
 function ant(){
+
   image(antright[j]);
 
-
   }
-
-
 
 
   // the map command !!!!
@@ -162,7 +158,7 @@ function ant(){
   for (var i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].drive();
-    if (cars[i].pos.dist(frogPos) < 70) {
+    if (cars[i].pos.dist(frogPos) < 50) {
       cars.splice(i, 1);
     }
   }
