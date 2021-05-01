@@ -150,7 +150,7 @@ image(garden, width/2, height/2);
   for (var i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].drive();
-    if (cars[i].pos.dist(frogPos) < 50) {
+    if (cars[i].pos.dist(frogPos) < 70) {
       cars.splice(i, 1);
     }
   }
