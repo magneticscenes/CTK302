@@ -92,7 +92,7 @@ function draw() {
 
 
 
-image(garden, 0, 0);
+image(garden, windowWidth/2, windowHeight/2);
   //background('#c6f5ff'); // light blue
 
 
