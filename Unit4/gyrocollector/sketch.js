@@ -10,12 +10,14 @@ let wormsleft = [];
 let wormsright = [];
 let duckleft = [];
 let duckright = [];
+let antleft = [];
+let antright = [];
 let timer = 0;
 let i = 0;
 let j = 0;
 let k = 0;
 let garden;
-
+let a;
 // var bunnyImage;
 var cars = [];
 var frogPos;
@@ -45,6 +47,13 @@ duckright[1] = loadImage("assets/duck2right.png");
 duckright[2] = loadImage("assets/duck2.5right.png");
 duckright[3] = loadImage("assets/duck3right.png");
 duckright[4] = loadImage("assets/duck4right.png");
+
+
+antleft[0] = loadImage("assets/antleft1.png");
+antleft[1] = loadImage("assets/antleft2.png");
+
+antright[0] = loadImage("assets/antrigh1.png");
+antright[1] = loadImage("assets/antright2.png");
 
   // wormleft = loadImage("assets/worm1left.png");
   // wormright = loadImage("assets/worm1right.png");
@@ -95,16 +104,19 @@ function draw() {
 image(garden, windowWidth/2, windowHeight/2);
   //background('#c6f5ff'); // light blue
 
+  push();
+  translate(x, 0);
+  //rect(100, 100, 100, 100);
+  ant();
+  //my avatar was too complicated to insert
+  pop();
+
+function ant(){
+  image(antright[j]);
 
 
+  }
 
-  // function mouseReleased() {
-  //   switch (state) {
-  //     case 0:
-  //       state = 1;
-  //       break;
-  //   }
-  // }
 
 
 
@@ -165,9 +177,9 @@ image(garden, windowWidth/2, windowHeight/2);
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
 push();
-translate(0, windowHeight - 210);
+translate(-15, windowHeight - 210);
 
-  textAlign(CENTER);
+  textAlign(LEFT);
   fill('white');
   textSize(10);
   //fill('black');
