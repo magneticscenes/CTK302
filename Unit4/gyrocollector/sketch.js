@@ -171,9 +171,9 @@ function draw() {
   //}
   // MORE DECORATIONS - write that pretty ATK type on top.
   fill('white');
-  textSize(10);
+  textSize(30);
   textAlign(CENTER);
-  text("Shake your device to make more worms appear!", width / 2, 1100, windowWidth - 200, windowHeight - 500);
+  text("Shake your device to make more worms appear!", width / 2, 1100, windowWidth - 200, windowHeight + 100);
 
 
   // Debugging information -- take this out when you're ready for production!
