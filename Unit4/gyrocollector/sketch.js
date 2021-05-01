@@ -16,8 +16,9 @@ let timer = 0;
 let i = 0;
 let j = 0;
 let k = 0;
+let m = 0;
 let garden;
-let a;
+
 // var bunnyImage;
 var cars = [];
 var frogPos;
@@ -28,6 +29,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
 garden = loadImage("assets/garden.png");
+
+ant = loadImage("assets/antright1.png");
+
 
 wormsleft[0] = loadImage("assets/worm1left.png");
 wormsleft[1] = loadImage("assets/worm2left.png");
@@ -100,14 +104,71 @@ function draw() {
 
 
 image(garden, windowWidth/2, windowHeight/2);
-  //background('#c6f5ff'); // light blue
 
-  push();
-  translate(x, 0);
-  //rect(100, 100, 100, 100);
-  ant();
-  //my avatar was too complicated to insert
-  pop();
+image(ant, m, windowHeight/2, 50, 50);
+m = m + 5 ;
+if (m > width){
+  m = -50;
+}
+
+function Car() {
+  // attributes
+  this.pos = createVector(random(height), random(width));
+  this.vel = createVector(random(-5, 3), random(-5, 3));
+  // this.r = random(255);
+  // this.g = random(255);
+  // this.b = random(255);
+  // this.a = random(255);  // alpha opacity value for fill!
+
+
+  // methods
+  this.display = function() {
+
+    if (this.vel.x > 0) {
+    image(wormsright[j], this.pos.x, this.pos.y, 80, 50);
+      // fill(this.r, this.g, this.b, this.a);
+      // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
+      // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
+      // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+    } else {
+        image(wormsleft[j], this.pos.x, this.pos.y, 80, 50);
+        // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+    }
+    timer++;
+    if (timer > 300){
+      timer = 0;
+    j++ ;
+    if (j > 1){
+    j = 0;
+    }
+  }
+    // maybe use an image here instead!
+    // fill(this.r, this.g, this.b, this.a);
+    // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
+    // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
+    // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+
+  }
+
+  this.drive = function() {
+    this.pos.add(this.vel);
+
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+
+  }
+
+}
+  //background('#c6f5ff'); // light blue
+  //
+  // push();
+  // translate(m, 0);
+  // //rect(100, 100, 100, 100);
+  // ant();
+  // //my avatar was too complicated to insert
+  // pop();
 
 
 
@@ -198,40 +259,40 @@ function deviceShaken() {
   }
 }
 
-function Ant() {
-
-  this.pos = createVector(random(height), random(width));
-  this.vel = createVector(random(-5, 3), random(-5, 3));
-
-this.display = function() {
-
-    if (this.vel.x > 0) {
-    image(antright[j], this.pos.x, this.pos.y, 80, 50);
-
-    } else {
-        image(antleft[j], this.pos.x, this.pos.y, 80, 50);
-        // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
-    }
-    timer++;
-    if (timer > 300){
-      timer = 0;
-    j++ ;
-    if (j > 1){
-    j = 0;
-    }
-  }
-
-  }
-  this.drive = function() {
-    this.pos.add(this.vel);
-
-    if (this.pos.x > width) this.pos.x = 0;
-    if (this.pos.x < 0) this.pos.x = width;
-    if (this.pos.y > height) this.pos.y = 0;
-    if (this.pos.y < 0) this.pos.y = height;
-
-  }
-}
+// function Ant() {
+//
+//   this.pos = createVector(random(height), random(width));
+//   this.vel = createVector(random(-5, 3), random(-5, 3));
+//
+// this.display = function() {
+//
+//     if (this.vel.x > 0) {
+//     image(antright[m], this.pos.x, this.pos.y, 80, 50);
+//
+//     } else {
+//         image(antleft[m], this.pos.x, this.pos.y, 80, 50);
+//         // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+//     }
+//     timer++;
+//     if (timer > 300){
+//       timer = 0;
+//     m++ ;
+//     if (m > 1){
+//     m = 0;
+//     }
+//   }
+//
+//   }
+//   this.drive = function() {
+//     this.pos.add(this.vel);
+//
+//     if (this.pos.x > width) this.pos.x = 0;
+//     if (this.pos.x < 0) this.pos.x = width;
+//     if (this.pos.y > height) this.pos.y = 0;
+//     if (this.pos.y < 0) this.pos.y = height;
+//
+//   }
+// }
 // HERE'S THE STUFF YOU NEED FOR READING IN DATA!!!
 
 // Read in accelerometer data
