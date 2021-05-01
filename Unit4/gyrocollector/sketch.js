@@ -52,7 +52,7 @@ duckright[4] = loadImage("assets/duck4right.png");
 antleft[0] = loadImage("assets/antleft1.png");
 antleft[1] = loadImage("assets/antleft2.png");
 
-antright[0] = loadImage("assets/antrigh1.png");
+antright[0] = loadImage("assets/antright1.png");
 antright[1] = loadImage("assets/antright2.png");
 
   // wormleft = loadImage("assets/worm1left.png");
@@ -109,11 +109,7 @@ image(garden, windowWidth/2, windowHeight/2);
   //my avatar was too complicated to insert
   pop();
 
-function ant(){
 
-  image(antright[j]);
-
-  }
 
 
   // the map command !!!!
@@ -202,7 +198,40 @@ function deviceShaken() {
   }
 }
 
+function Ant() {
 
+  this.pos = createVector(random(height), random(width));
+  this.vel = createVector(random(-5, 3), random(-5, 3));
+
+this.display = function() {
+
+    if (this.vel.x > 0) {
+    image(antright[j], this.pos.x, this.pos.y, 80, 50);
+
+    } else {
+        image(antleft[j], this.pos.x, this.pos.y, 80, 50);
+        // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
+    }
+    timer++;
+    if (timer > 300){
+      timer = 0;
+    j++ ;
+    if (j > 1){
+    j = 0;
+    }
+  }
+
+  }
+  this.drive = function() {
+    this.pos.add(this.vel);
+
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+
+  }
+}
 // HERE'S THE STUFF YOU NEED FOR READING IN DATA!!!
 
 // Read in accelerometer data
@@ -230,10 +259,10 @@ function Car() {
   // attributes
   this.pos = createVector(random(height), random(width));
   this.vel = createVector(random(-5, 3), random(-5, 3));
-  this.r = random(255);
-  this.g = random(255);
-  this.b = random(255);
-  this.a = random(255);  // alpha opacity value for fill!
+  // this.r = random(255);
+  // this.g = random(255);
+  // this.b = random(255);
+  // this.a = random(255);  // alpha opacity value for fill!
 
 
   // methods
