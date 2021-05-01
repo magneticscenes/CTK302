@@ -184,7 +184,10 @@ function draw() {
   textAlign(CENTER);
   text("Shake your device to make more worms appear!", width / 2, 1100, width/2, -100);
 
-
+  fill('white');
+  textSize(20);
+  textAlign(CENTER);
+  text("u", width / 2, 1100, 30, 30);
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
   // push();
