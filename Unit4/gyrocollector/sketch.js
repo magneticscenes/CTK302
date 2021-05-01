@@ -12,6 +12,7 @@ let wormleft;
 let wormright;
 let timer = 0;
 let i = 0;
+let j = 0;
 
 
 // var bunnyImage;
@@ -37,7 +38,7 @@ wormsright[1] = loadImage("assets/worm2right.png");
 
 
   // spawn a bunch of cars
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 10; i++) {
     cars.push(new Car());
   }
 
@@ -184,7 +185,7 @@ window.addEventListener('devicemotion', function(e) {
 function Car() {
   // attributes
   this.pos = createVector(100, 100);
-  this.vel = createVector(random(-5, 5), random(-5, 5));
+  this.vel = createVector(random(-5, 3), random(-5, 3));
   this.r = random(255);
   this.g = random(255);
   this.b = random(255);
@@ -195,21 +196,21 @@ function Car() {
   this.display = function() {
 
     if (this.vel.x > 0) {
-    image(wormsright[i], this.pos.x, this.pos.y);
+    image(wormsright[j], this.pos.x, this.pos.y);
       // fill(this.r, this.g, this.b, this.a);
       // ellipse(this.pos.x - 50, this.pos.y, 50, 50);
       // ellipse(this.pos.x + 50, this.pos.y, 50, 50);
       // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     } else {
-        image(wormsleft[i], this.pos.x, this.pos.y);
+        image(wormsleft[j], this.pos.x, this.pos.y);
         // rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
     }
     timer++;
-    if (timer > 90){
+    if (timer > 300){
       timer = 0;
-    i++ ;
-    if (i > 1){
-    i = 0;
+    j++ ;
+    if (j > 1){
+    j = 0;
     }
   }
     // maybe use an image here instead!
