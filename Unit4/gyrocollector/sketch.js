@@ -182,7 +182,7 @@ function draw() {
   fill('white');
   textSize(20);
   textAlign(CENTER);
-  text("Shake your device to make more worms appear!", width / 2, 1100, windowWidth - 200, windowHeight + 100);
+  text("Shake your device to make more worms appear!", width / 2, 1100, width/2, height + 100);
 
 
   // Debugging information -- take this out when you're ready for production!
