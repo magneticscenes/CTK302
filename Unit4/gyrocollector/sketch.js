@@ -164,6 +164,9 @@ image(garden, windowWidth/2, windowHeight/2);
 
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
+push();
+translate(0, windowHeight - 210);
+
   textAlign(CENTER);
   fill('white');
   textSize(10);
@@ -179,7 +182,7 @@ image(garden, windowWidth/2, windowHeight/2);
   text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
   text("y = " + y, 25, 170);
   text("z = " + z, 25, 190);
-
+pop();
 }
 
 
@@ -217,7 +220,7 @@ window.addEventListener('devicemotion', function(e) {
 // car class!!
 function Car() {
   // attributes
-  this.pos = createVector(100, 100);
+  this.pos = createVector(random(height), random(width));
   this.vel = createVector(random(-5, 3), random(-5, 3));
   this.r = random(255);
   this.g = random(255);
